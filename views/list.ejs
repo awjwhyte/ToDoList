@@ -1,0 +1,21 @@
+<%- include('header') %>
+   <div class="box">
+            <% newItem.forEach((x) => { %>
+                <% if(x !== '' ) { %>
+                    <div class="item">
+                        <input type="checkbox">
+                        <p><%= x %></p>
+                    </div>
+                 <%} else { %>
+                    <% newItem.pop() %>
+                    <!-- <% newItem.pop() %> -->
+                <% } %>
+             <%})%>
+        <form action="/" method="post" class="item">
+            <input type="text" name="newItem" placeholder="Add new item" autocomplete="off">
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+    </div>
+</body>
+<%- include('footer') %>
+</html>
