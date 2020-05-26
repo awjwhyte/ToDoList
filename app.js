@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(`${__dirname}/public`));
 
 app.set('view engine', 'ejs');
-const items = ['Add an empty item to delete the last added item'], workItems = [];
+const items = ['Write new book'], workItems = [];
 
 app.get('/', (req, res) => {  
     const day = date.getDate();
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/work', (req, res) => {
+app.get('/work', (req, res) => { 
     res.render('list', {
         listTitle:'Work',
         newItem: workItems

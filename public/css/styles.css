@@ -32,9 +32,11 @@ html {
   .item {
     min-height: 70px;
     display: flex;
-    /* flex-flow: column; */
+    flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #F1F1F1;
+    padding: 0 1em;
   }
   
   .item:last-child {
@@ -46,10 +48,15 @@ html {
     text-decoration-color: #A683E3;
   }
   
-  input[type="checkbox"] {
+  /* input[type="checkbox"] {
     margin: 20px;
-  }
+  } */
   
+  .delete:hover {
+    cursor: pointer;
+    color: red;
+  }
+
   p {
     margin: 0;
     padding: 20px;
