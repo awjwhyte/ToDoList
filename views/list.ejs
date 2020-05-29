@@ -2,18 +2,19 @@
    <div class="box">
             <% newItem.forEach((x) => { %>
                 <% if(x !== '') { %>
-                    <%const y = x.toLowerCase().split(' ').map((a) => { %>
-                     <% return a.replace(a[0], a[0].toUpperCase())}).join('')%>
-                    <div class="item" id="<%= y %>">
-                        <input type="checkbox">
-                        <p><%= x %></p>
-                        <ion-icon name="trash-outline" class="delete" onclick="deleteItem(<%=y%>)"></ion-icon>
+                <form action="/remove" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox">
+                        <p class="text"><%= x.name %></p>
+                        <button id="one" type="submit" name="delete" value="<%=x._id%>"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
                     </div>
+                    <input type="hidden" name="listName" value="<%= listTitle %>">
+                </form>
                  <%}%>
              <%})%>
         <form action="/" method="post" class="item">
             <input type="text" name="newItem" placeholder="Add new item" autocomplete="off">
-            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+            <button id="two" type="submit" name="list" value="<%= listTitle %>">+</button>
         </form>
     </div>
 <%- include('footer') %>
