@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/toDoListDB';
+require('dotenv').config();
+const url = `mongodb+srv://${process.env.ADMIN}:${process.env.PASS}@cluster0-1ckap.mongodb.net/toDoListDB`;
+
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
@@ -139,8 +141,8 @@ app.post('/remove', (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 3100, () => {
-    console.log('server is running on port 3100');
+app.listen(process.env.PORT || 3000, () => {
+    console.log('server is running on port 3000');
 });
 
 

@@ -7,6 +7,7 @@ modules. This assumes you already have node js and npm installed. If not, at thi
 4. Start adding new list items and cross out already finished items by selecting the 
 checkbox by the item.
 5. Bonus feature enables you to delete items on the list. 
+6. Additionally, I signed up for a free atlas account to test this on, you can replace the entire connection url with a new one or only modify the places that need modification like database user name and password fields. 
 
 Feel free to use this project as a starter for more complex projects. 
 If you feel grateful, kindly make a donation;
